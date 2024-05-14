@@ -229,7 +229,11 @@ def orange_list():
 
 @route("/magio/playlist")
 def magio_playlist():
-    input_stream_ = "#KODIPROP:inputstream=inputstream.adaptive\n#KODIPROP:inputstream.adaptive.manifest_type=mpd\n#KODIPROP:mimetype=application/dash+xml\n"
+    input_stream_ = """#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.internal_cookies=true
+#KODIPROP:mimetype=application/dash+xml
+"""
     ch = magio.get_channels()
     t = ""
     for x,y in ch.items():
